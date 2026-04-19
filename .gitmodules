@@ -1,0 +1,6 @@
+[submodule "eng/submodules/openal-soft"]
+	path = eng/submodules/openal-soft
+	url = https://github.com/kcat/openal-soft
+[submodule "eng/submodules/sdl"]
+	path = eng/submodules/sdl
+	url = https://github.com/libsdl-org/SDL
