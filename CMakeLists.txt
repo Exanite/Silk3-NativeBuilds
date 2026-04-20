@@ -1,13 +1,20 @@
 cmake_minimum_required(VERSION 3.28)
 project(Silk.NET LANGUAGES CXX)
 
-# ----- Project wide configuration -----
+# ----- Import utilities -----
 
 # Add ExternalProject support
 include(ExternalProject)
 
 # Add shared external project arguments
 include(./eng/native/cmake/ExternalProjectArgs.cmake)
+
+# ----- Project wide configuration -----
+
+# Default to release builds
+if(NOT DEFINED CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # ----- Native projects -----
 
