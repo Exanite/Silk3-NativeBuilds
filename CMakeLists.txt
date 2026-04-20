@@ -22,7 +22,7 @@ add_subdirectory(./sources/Vulkan/MoltenVK.Native)
 add_subdirectory(./sources/Vulkan/Vma.Native)
 
 # Create explicit all target for native builds
-add_custom_target(AllTargets
+add_custom_target(External.All
     DEPENDS
         External.OpenAlSoft
         External.Sdl
