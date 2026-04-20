@@ -9,9 +9,6 @@
         SOURCE_DIR ${source_dir}
         BINARY_DIR ${build_dir}
         INSTALL_DIR ${install_dir}
-        BUILD_BYPRODUCTS
-            ${output_file}
-            ${output_lib}
         CMAKE_ARGS
             # ----- Shared options -----
 
