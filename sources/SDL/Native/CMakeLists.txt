@@ -4,15 +4,6 @@
     set(build_dir ${CMAKE_BINARY_DIR}/build/sdl)
     set(install_dir ${CMAKE_BINARY_DIR}/install/sdl)
 
-    # Define outputs
-    set(base_name "SDL3")
-    if(WIN32)
-        set(output_binary "${install_dir}/bin/${CMAKE_SHARED_LIBRARY_PREFIX}${base_name}${CMAKE_SHARED_LIBRARY_SUFFIX}")
-        set(output_lib "${install_dir}/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}${base_name}${CMAKE_IMPORT_LIBRARY_SUFFIX}")
-    else()
-        set(output_binary "${install_dir}/lib/${CMAKE_SHARED_LIBRARY_PREFIX}${base_name}${CMAKE_SHARED_LIBRARY_SUFFIX}")
-    endif()
-
     # Define external project target
     ExternalProject_Add(External.Sdl
         SOURCE_DIR ${source_dir}
@@ -36,6 +27,7 @@
             -DBUILD_SHARED_LIBS=ON
 
             # Other options
+            # TODO: Currently based on the Linux settings used in Silk 3
             -DSDL_TEST_LIBRARY=OFF
     )
 endblock()
