@@ -1,0 +1,54 @@
+﻿{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "linux-clang-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/artifacts/cmake/linux-clang-release",
+      "toolchainFile": "${sourceDir}/eng/native/cmake/toolchain/GlobalOptions.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "windows-vs2022-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/artifacts/cmake/windows-vs2022-release",
+      "toolchainFile": "${sourceDir}/eng/native/cmake/toolchain/GlobalOptions.cmake",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "toolset":  {
+        "value":  "v143,host=x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "mac-clang-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/artifacts/cmake/mac-clang-release",
+      "toolchainFile": "${sourceDir}/eng/native/cmake/toolchain/GlobalOptions.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "linux-clang-release", "configurePreset": "linux-clang-release", "configuration": "Release" },
+    { "name": "windows-vs2022-release", "configurePreset": "windows-vs2022-release", "configuration": "Release" },
+    { "name": "mac-clang-release", "configurePreset": "mac-clang-release", "configuration": "Release" }
+  ]
+}

@@ -7,7 +7,7 @@ project(Silk.NET LANGUAGES CXX)
 include(ExternalProject)
 
 # Add shared external project arguments
-include(./eng/native/cmake/ExternalProjectArgs.cmake)
+include(./eng/native/cmake/external/ExternalProjectArgs.cmake)
 
 # ----- Project wide configuration -----
 
