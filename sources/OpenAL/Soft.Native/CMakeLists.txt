@@ -5,6 +5,7 @@ block()
     set(install_dir ${CMAKE_BINARY_DIR}/install/openal-soft)
 
     # Define external project target
+    silk_get_external_project_args(external_project_args ${install_dir})
     ExternalProject_Add(External.OpenAlSoft
         SOURCE_DIR ${source_dir}
         BINARY_DIR ${build_dir}
@@ -12,11 +13,7 @@ block()
         CMAKE_ARGS
             # ----- Shared options -----
 
-            # Use release builds
-            -DCMAKE_BUILD_TYPE=Release
-
-            # Set install directory
-            -DCMAKE_INSTALL_PREFIX=${install_dir}
+            ${external_project_args}
 
             # ----- Dependency specific options -----
 

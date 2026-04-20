@@ -3,11 +3,11 @@ project(Silk.NET LANGUAGES CXX)
 
 # ----- Project wide configuration -----
 
-# Tell CMake where to find CMake find modules
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/eng/native/cmake)
-
 # Add ExternalProject support
 include(ExternalProject)
+
+# Add shared external project arguments
+include(./eng/native/cmake/ExternalProjectArgs.cmake)
 
 # ----- Native projects -----
 

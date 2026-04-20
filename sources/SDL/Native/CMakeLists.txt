@@ -5,6 +5,7 @@
     set(install_dir ${CMAKE_BINARY_DIR}/install/sdl)
 
     # Define external project target
+    silk_get_external_project_args(external_project_args ${install_dir})
     ExternalProject_Add(External.Sdl
         SOURCE_DIR ${source_dir}
         BINARY_DIR ${build_dir}
@@ -12,11 +13,7 @@
         CMAKE_ARGS
             # ----- Shared options -----
 
-            # Use release builds
-            -DCMAKE_BUILD_TYPE=Release
-
-            # Set install directory
-            -DCMAKE_INSTALL_PREFIX=${install_dir}
+            ${external_project_args}
 
             # ----- Dependency specific options -----
 
