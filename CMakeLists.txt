@@ -11,5 +11,19 @@ include(ExternalProject)
 
 # ----- Native projects -----
 
+add_subdirectory(./sources/Assimp/Native)
 add_subdirectory(./sources/OpenAL/Soft.Native)
 add_subdirectory(./sources/SDL/Native)
+add_subdirectory(./sources/Spirv/Cross.Native)
+add_subdirectory(./sources/Spirv/Reflect.Native)
+add_subdirectory(./sources/Spirv/Shaderc.Native)
+add_subdirectory(./sources/Spirv/Tools.Native)
+add_subdirectory(./sources/Vulkan/MoltenVK.Native)
+add_subdirectory(./sources/Vulkan/Vma.Native)
+
+# Create explicit all target for native builds
+add_custom_target(AllTargets
+    DEPENDS
+        External.OpenAlSoft
+        External.Sdl
+)
