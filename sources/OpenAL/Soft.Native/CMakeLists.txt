@@ -1,36 +1,30 @@
-block()
-    # Define relevant folders
-    set(source_dir ${CMAKE_CURRENT_LIST_DIR}/../../../eng/submodules/openal-soft)
-    set(build_dir ${CMAKE_BINARY_DIR}/build/openal-soft)
-    set(install_dir ${CMAKE_BINARY_DIR}/install/openal-soft)
+# Define relevant folders
+set(source_dir ${CMAKE_SOURCE_DIR}/eng/submodules/openal-soft)
+set(build_dir ${CMAKE_BINARY_DIR}/build/openal-soft)
+set(install_dir ${CMAKE_BINARY_DIR}/install/openal-soft)
 
-    # Define external project target
-    silk_get_external_project_args(external_project_args ${install_dir})
-    ExternalProject_Add(External.OpenAlSoft
-        SOURCE_DIR ${source_dir}
-        BINARY_DIR ${build_dir}
-        INSTALL_DIR ${install_dir}
-        CMAKE_ARGS
-            # ----- Shared options -----
+# Define external project
+silk_get_external_project_args(external_project_args ${install_dir})
+ExternalProject_Add(External.OpenAlSoft
+    SOURCE_DIR ${source_dir}
+    BINARY_DIR ${build_dir}
+    INSTALL_DIR ${install_dir}
+    CMAKE_ARGS
+        ${external_project_args}
 
-            ${external_project_args}
+        # Build shared library
+        -DBUILD_SHARED_LIBS=ON
 
-            # ----- Dependency specific options -----
+        # Other options
+        # TODO: Currently based on the Linux settings used in Silk 3
+        -DALSOFT_UTILS=OFF
+        -DALSOFT_EXAMPLES=OFF
 
-            # Build shared library
-            -DBUILD_SHARED_LIBS=ON
-
-            # Other options
-            # TODO: Currently based on the Linux settings used in Silk 3
-            -DALSOFT_UTILS=OFF
-            -DALSOFT_EXAMPLES=OFF
-
-            -DALSOFT_REQUIRE_RTKIT=ON
-            -DALSOFT_REQUIRE_ALSA=ON
-            -DALSOFT_REQUIRE_OSS=ON
-            -DALSOFT_REQUIRE_PORTAUDIO=ON
-            -DALSOFT_REQUIRE_PULSEAUDIO=ON
-            -DALSOFT_REQUIRE_JACK=ON
-            -DALSOFT_REQUIRE_PIPEWIRE=ON
-    )
-endblock()
+        -DALSOFT_REQUIRE_RTKIT=ON
+        -DALSOFT_REQUIRE_ALSA=ON
+        -DALSOFT_REQUIRE_OSS=ON
+        -DALSOFT_REQUIRE_PORTAUDIO=ON
+        -DALSOFT_REQUIRE_PULSEAUDIO=ON
+        -DALSOFT_REQUIRE_JACK=ON
+        -DALSOFT_REQUIRE_PIPEWIRE=ON
+)
