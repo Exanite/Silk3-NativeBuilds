@@ -15,11 +15,12 @@ ExternalProject_Add(External.OpenAlSoft
         # Build shared library
         -DBUILD_SHARED_LIBS=ON
 
-        # Other options
-        # TODO: Currently based on the Linux settings used in Silk 3
+        # Unnecessary features
         -DALSOFT_UTILS=OFF
         -DALSOFT_EXAMPLES=OFF
 
+        # Other options
+        # TODO: Currently based on the Linux settings used in Silk 3
         -DALSOFT_REQUIRE_RTKIT=ON
         -DALSOFT_REQUIRE_ALSA=ON
         -DALSOFT_REQUIRE_OSS=ON

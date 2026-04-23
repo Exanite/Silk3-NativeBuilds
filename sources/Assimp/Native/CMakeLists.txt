@@ -15,8 +15,10 @@ ExternalProject_Add(External.Assimp
         # Build shared library
         -DBUILD_SHARED_LIBS=ON
 
+        # Unnecessary features
+        -DASSIMP_BUILD_TESTS=OFF
+
         # Other options
         -DASSIMP_BUILD_ZLIB=ON
         -DASSIMP_WARNINGS_AS_ERRORS=OFF
-        -DASSIMP_BUILD_TESTS=OFF
 )
