@@ -14,4 +14,7 @@ ExternalProject_Add(External.SpirvTools
 
         # Build shared library
         -DBUILD_SHARED_LIBS=ON
+
+        # Set path to SPIRV-Headers
+        -DSPIRV-Headers_SOURCE_DIR=${CMAKE_SOURCE_DIR}/eng/submodules/spirv-headers
 )
