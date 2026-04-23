@@ -14,4 +14,7 @@ ExternalProject_Add(External.Shaderc
 
         # Build shared library
         -DBUILD_SHARED_LIBS=ON
+
+        # Unnecessary features
+        -DSHADERC_SKIP_TESTS=ON
 )
