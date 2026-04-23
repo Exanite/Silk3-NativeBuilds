@@ -25,8 +25,11 @@ add_subdirectory(./sources/SPIRV/Cross.Native)
 add_subdirectory(./sources/SPIRV/Reflect.Native)
 add_subdirectory(./sources/SPIRV/Shaderc.Native)
 add_subdirectory(./sources/SPIRV/Tools.Native)
-add_subdirectory(./sources/Vulkan/MoltenVK.Native)
 add_subdirectory(./sources/Vulkan/Vma.Native)
+
+if(APPLY)
+    add_subdirectory(./sources/Vulkan/MoltenVK.Native)
+endif()
 
 # Create explicit all target for native builds
 add_custom_target(External.All
