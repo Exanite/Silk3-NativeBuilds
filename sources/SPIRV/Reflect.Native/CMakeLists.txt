@@ -13,5 +13,9 @@ ExternalProject_Add(External.SpirvReflect
         ${external_project_args}
 
         # Build shared library
-        -DBUILD_SHARED_LIBS=ON
+        -DSPIRV_REFLECT_STATIC_LIB=OFF
+
+        # Unnecessary features
+        -DSPIRV_REFLECT_EXECUTABLE=OFF
+        -DSPIRV_REFLECT_EXAMPLES=OFF
 )
