@@ -9,7 +9,10 @@ include(ExternalProject)
 # Add shared external project arguments
 include(./eng/native/cmake/external/ExternalProjectArgs.cmake)
 
-# ----- Project wide configuration -----
+# ----- First-party project configuration -----
+
+# These only apply to non-external projects since external projects are isolated
+# If you want to configure all projects, modify the /eng/cmake/toolchain/GlobalOptions.cmake file
 
 # Default to release builds
 if(NOT DEFINED CMAKE_BUILD_TYPE)
@@ -42,7 +45,7 @@ endif()
 # ----- Define build all target -----
 
 # This section creates an explicit all target for convenience
-# For example, on Jetbrains IDEs, there is option to build all targets, so this acts as a substitute
+# For example, on Jetbrains IDEs, there is no option to build all targets, so this acts as a substitute
 
 # Define a list of all targets
 set(native_build_targets_raw
