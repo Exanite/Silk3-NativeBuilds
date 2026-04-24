@@ -13,5 +13,10 @@ ExternalProject_Add(External.SpirvCross
         ${external_project_args}
 
         # Build shared library
-        -DBUILD_SHARED_LIBS=ON
+        -DSPIRV_CROSS_STATIC=OFF
+        -DSPIRV_CROSS_SHARED=ON
+
+        # Unnecessary features
+        -DSPIRV_CROSS_CLI=OFF
+        -DSPIRV_CROSS_ENABLE_TESTS=OFF
 )
