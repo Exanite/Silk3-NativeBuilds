@@ -37,22 +37,34 @@ add_subdirectory(./sources/Vulkan/Vma.Native/External)
 
 if(APPLE)
     add_subdirectory(./sources/Vulkan/MoltenVK.Native)
-else()
-    add_custom_target(External.MoltenVK)
 endif()
 
-# Create explicit all target for native builds for convenience
-add_custom_target(AllTargets
-    DEPENDS
-        External.Assimp
-        External.MoltenVK
-        External.OpenAlSoft
-        External.Sdl
-        External.Shaderc
-        External.Shaderc
-        External.SpirvCross
-        External.SpirvReflect
-        External.SpirvTools
+# ----- Define build all target -----
 
-        Silk.VulkanMemoryAllocator
+# This section creates an explicit all target for convenience
+# For example, on Jetbrains IDEs, there is option to build all targets, so this acts as a substitute
+
+# Define a list of all targets
+set(native_build_targets_raw
+    External.Assimp
+    External.MoltenVK
+    External.OpenAlSoft
+    External.Sdl
+    External.Shaderc
+    External.Shaderc
+    External.SpirvCross
+    External.SpirvReflect
+    External.SpirvTools
+
+    Silk.VulkanMemoryAllocator
 )
+
+# Filter out targets invalid for the current configuration
+set(native_build_targets "")
+foreach(target IN LISTS native_build_targets_raw)
+    if(TARGET ${target})
+        list(APPEND native_build_targets ${target})
+    endif()
+endforeach()
+
+add_custom_target(BuildNative DEPENDS ${native_build_targets})
