@@ -56,6 +56,7 @@ set(native_build_targets_raw
     External.SpirvReflect
     External.SpirvTools
 
+    # VMA needs to be wrapped since VMA does not build as a shared library by default
     Silk.VulkanMemoryAllocator
 )
 
