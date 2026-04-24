@@ -13,6 +13,7 @@ ExternalProject_Add(External.SpirvReflect
         ${external_project_args}
 
         # Build shared library
+        # TODO: SPIRV-Reflect doesn't have shared library build support. See https://github.com/KhronosGroup/SPIRV-Reflect/pull/276
         -DSPIRV_REFLECT_STATIC_LIB=OFF
 
         # Unnecessary features
