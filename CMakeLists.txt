@@ -9,7 +9,7 @@ include(ExternalProject)
 # Add shared external project arguments
 include(./eng/native/cmake/external/ExternalProjectArgs.cmake)
 
-# ----- First-party project configuration -----
+# ----- Global config (Non-external) -----
 
 # These only apply to non-external projects since external projects are isolated
 # If you want to configure all projects, modify the /eng/cmake/toolchain/GlobalOptions.cmake file
