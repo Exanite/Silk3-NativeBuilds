@@ -30,7 +30,7 @@
 	url = https://github.com/KhronosGroup/SPIRV-Tools
 [submodule "eng/submodules/spirv-reflect"]
 	path = eng/submodules/spirv-reflect
-	url = https://github.com/KhronosGroup/SPIRV-Reflect
+	url = https://github.com/Exanite/SPIRV-Reflect
 [submodule "eng/submodules/spirv-headers"]
 	path = eng/submodules/spirv-headers
 	url = https://github.com/KhronosGroup/SPIRV-Headers
