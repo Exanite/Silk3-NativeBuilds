@@ -17,4 +17,11 @@ ExternalProject_Add(External.Shaderc
 
         # Unnecessary features
         -DSHADERC_SKIP_TESTS=ON
+        -DSHADERC_SKIP_EXAMPLES=ON
+        -DSHADERC_SKIP_EXECUTABLES=ON
+
+        # Set paths to dependencies
+        -DSHADERC_GLSLANG_DIR=${CMAKE_SOURCE_DIR}/eng/submodules/glslang
+        -DSHADERC_SPIRV_TOOLS_DIR=${CMAKE_SOURCE_DIR}/eng/submodules/spirv-tools
+        -DSPIRV-Headers_SOURCE_DIR=${CMAKE_SOURCE_DIR}/eng/submodules/spirv-headers
 )

@@ -19,6 +19,6 @@ ExternalProject_Add(External.SpirvTools
         -DSPIRV_SKIP_EXECUTABLES=ON
         -DSPIRV_SKIP_TESTS=ON
 
-        # Set path to SPIRV-Headers
+        # Set paths to dependencies
         -DSPIRV-Headers_SOURCE_DIR=${CMAKE_SOURCE_DIR}/eng/submodules/spirv-headers
 )
