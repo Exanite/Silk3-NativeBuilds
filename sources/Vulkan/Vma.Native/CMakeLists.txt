@@ -1,6 +1,6 @@
 add_library(Silk.VulkanMemoryAllocator SHARED)
 set_target_properties(Silk.VulkanMemoryAllocator
-        PROPERTIES
+    PROPERTIES
         CXX_STANDARD 23
         OUTPUT_NAME "vma"
 )
