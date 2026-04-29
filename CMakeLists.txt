@@ -26,6 +26,12 @@ endif()
 # External projects are built in isolation
 # This means that their variables and targets are isolated from ours
 # Very few variables (usually compiler related) are automatically passed to the external project build
+#
+# Notes:
+#
+# `DOWNLOAD_COMMAND ""` disables the "source folder is non-empty" check for external projects
+# This makes CMake error at build time instead of configure time
+# This allows us to manually initialize only the submodules we need for the build
 
 add_subdirectory(./sources/Assimp/Native)
 add_subdirectory(./sources/OpenAL/Soft.Native)

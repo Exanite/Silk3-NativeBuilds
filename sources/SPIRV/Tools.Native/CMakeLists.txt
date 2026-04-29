@@ -9,6 +9,7 @@ ExternalProject_Add(External.SpirvTools
     SOURCE_DIR ${source_dir}
     BINARY_DIR ${build_dir}
     INSTALL_DIR ${install_dir}
+    DOWNLOAD_COMMAND ""
     CMAKE_ARGS
         ${external_project_args}
 
